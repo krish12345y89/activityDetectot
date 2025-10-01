@@ -29,47 +29,16 @@ CampusGuard AI transforms passive surveillance into active threat detection by:
 
 ```mermaid
 graph TD
-    subgraph “Input Layer”
-        A[CCTV Camera 1] --> B[RTSP Stream]
-        C[CCTV Camera 2] --> B
-        D[CCTV Camera N] --> B
-    end
-
-    subgraph “Processing Core”
-        E[Video Stream Manager] --> F[Frame Preprocessor]
-        F --> G[AI Detection Engine]
-        G --> H[YOLO Object Detection]
-        G --> I[MediaPipe Pose Estimation]
-        G --> J[Motion Analysis]
-    end
-
-    subgraph “Intelligence Layer”
-        H --> K[Activity Classifier]
-        I --> K
-        J --> K
-        K --> L{Abnormal Activity?}
-    end
-
-    subgraph “Output Layer”
-        L -->|Yes| M[Alert Manager]
-        M --> N[Telegram Bot]
-        M --> O[Email Service]
-        M --> P[Database Logger]
-        M --> Q[Evidence Saver]
-    end
-
-    subgraph “Dashboard”
-        R[Web Interface] --> S[Live Feed Display]
-        R --> T[Alert History]
-        R --> U[System Analytics]
-    end
-
-    B --> E
-    P --> R
-    N --> R
-    
-    style G fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    style M fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    A[Video Input: RTSP/USB Camera] --> B[Frame Capture]
+    B --> C[Preprocessing: Resize, Grayscale]
+    C --> D[Background Subtraction]
+    D --> E[Object Detection Blobs]
+    E --> F[Object Tracking]
+    F --> G[Activity Analysis]
+    G --> H{Abnormal Activity?}
+    H -->|Yes| I[Alert: Email/SMS]
+    H -->|No| B
+    I --> J[Log Incident]
 ```
 
 ## 🔍 Detection Capabilities
