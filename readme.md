@@ -93,6 +93,18 @@ Frontend:
   - WebRTC: Live Streaming
 ```
 
+```
+Budget Breakdown (Approx 2,500₹)
+Component	Quantity	Approx Price
+Arduino Nano	1	300₹
+SG90 Servo Motors	4	800₹
+Raspberry Pi Zero W	1	900₹
+Pi Camera	1	300₹
+Acrylic/3D Printed Parts	-	200₹
+Total		2,500₹
+
+```
+
 ## 📁 Project Structure
 
 ```
